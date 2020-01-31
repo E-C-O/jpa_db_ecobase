@@ -17,6 +17,15 @@ public class Venda {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
+	@ManyToOne
+	@JsonIgnoreProperties("venda")
+	private Usuario usuario;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Produto produto;
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -25,10 +34,6 @@ public class Venda {
 		this.id = id;
 	}
 	
-	@ManyToOne
-	@JsonIgnoreProperties("venda")
-	private Usuario usuario;
-
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -36,6 +41,13 @@ public class Venda {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
+
+	public Produto getProduto() {
+		return produto;
+	}
+
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
 	
 }

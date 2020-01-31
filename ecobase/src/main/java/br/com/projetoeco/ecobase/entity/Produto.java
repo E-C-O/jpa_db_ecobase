@@ -1,15 +1,21 @@
 package br.com.projetoeco.ecobase.entity;
 
 import java.math.BigDecimal;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "produto")
@@ -39,7 +45,15 @@ public class Produto {
 	@Size(max = 100, message = "Numero de caracteres não permitido")
 	@NotEmpty(message = "O campo deve ser preenchido")
 	private String marca;
-
+	
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Categoria categoria;
+	
+	@OneToMany (mappedBy = "produto", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("produto")
+	private List<Venda> venda;
+	
 	public int getId() {
 		return id;
 	}
@@ -87,5 +101,22 @@ public class Produto {
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-	
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+	public List<Venda> getVenda() {
+		return venda;
+	}
+
+	public void setVenda(List<Venda> venda) {
+		this.venda = venda;
+	}
+
+
 }
