@@ -85,8 +85,4 @@ public class VendaController {
 		return ResponseEntity.ok(this.service.getAll());
 	}
 	
-	@GetMapping("/vendas/{id}")
-	public ResponseEntity<List<Venda>> getAllById(@Valid @PathVariable int id){
-		return ResponseEntity.ok(this.service.getAllById(id));
-	}	
 }
