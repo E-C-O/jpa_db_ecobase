@@ -19,5 +19,6 @@ public interface UsuarioService {
 	List<Usuario> getAllByNome(String nome);
 	
 	Usuario getByNome(String nome);
+	
 
 }

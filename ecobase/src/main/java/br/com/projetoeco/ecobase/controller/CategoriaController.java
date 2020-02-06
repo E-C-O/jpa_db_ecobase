@@ -56,19 +56,25 @@ public class CategoriaController {
 		}
 	}
 	
+//	@DeleteMapping("/categoria/{id}")
+//	public ResponseEntity<String> delete(@Valid @PathVariable int id){
+//		if(this.service.getById(id) == null) {
+//			return ResponseEntity.notFound().build();
+//		}
+//		
+//		try {
+//			this.service.delete(id);
+//			return ResponseEntity.ok("Categoria removida com sucesso!");
+//		} catch (Exception err) {
+//			return ResponseEntity.badRequest().body(err.getMessage());
+//		}
+//	}
+	
 	@DeleteMapping("/categoria/{id}")
-	public ResponseEntity<String> delete(@Valid @PathVariable int id){
-		if(this.service.getById(id) == null) {
-			return ResponseEntity.notFound().build();
-		}
-		
-		try {
-			this.service.delete(id);
-			return ResponseEntity.ok("Categoria removida com sucesso!");
-		} catch (Exception err) {
-			return ResponseEntity.badRequest().body(err.getMessage());
-		}
+	public void delete(@Valid @PathVariable int id) {
+		this.service.delete(id);
 	}
+	
 	
 	@GetMapping("/categoria/{id}")
 	public ResponseEntity<Categoria> getById(@Valid @PathVariable int id){
@@ -89,5 +95,6 @@ public class CategoriaController {
 	public ResponseEntity<List<Categoria>> getAllByNome(@Valid @PathVariable String nome){
 		return ResponseEntity.ok(this.service.getAllByNome(nome));
 	}
+	
 	
 }

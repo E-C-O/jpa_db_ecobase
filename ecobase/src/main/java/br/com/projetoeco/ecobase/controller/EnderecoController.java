@@ -57,16 +57,16 @@ public class EnderecoController {
 	}
 	
 	@DeleteMapping("/endereco/{id}")
-	public ResponseEntity<String> delete(@Valid @PathVariable int id){
+	public void delete(@Valid @PathVariable int id){
 		if(this.service.getById(id) == null) {
-			return ResponseEntity.notFound().build();
+//			return ResponseEntity.notFound().build();
 		}
 		
 		try {
 			this.service.delete(id);
-			return ResponseEntity.ok("Endereço removido com sucesso!");
+//			return ResponseEntity.ok("Endereço removido com sucesso!");
 		} catch (Exception err) {
-			return ResponseEntity.badRequest().body(err.getMessage());
+//			return ResponseEntity.badRequest().body(err.getMessage());
 		}
 	}
 	

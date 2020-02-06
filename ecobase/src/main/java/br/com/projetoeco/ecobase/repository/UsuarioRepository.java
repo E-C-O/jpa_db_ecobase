@@ -10,5 +10,8 @@ public interface UsuarioRepository extends CrudRepository <Usuario, Integer> {
 
 	List<Usuario> findAllByNome(String nome);
 	Usuario findUsuarioByNome(String nome);
+	
+	List<Usuario> findUsuarioByEmail(String email);
+	List<Usuario> findUsuarioBySenha(String senha);
 
 }

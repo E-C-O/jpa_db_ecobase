@@ -51,4 +51,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 	public List<Usuario> insertOrUpdateAll(List<Usuario> entities) {
 		return (List<Usuario>) this.repository.saveAll(entities);
 	}
+
+
+	
+//	@Override
+//	public List<Usuario> findSenha(String senha) {
+//		
+//		return this.repository.findUsuarioBySenha(senha);
+//	}
 }
