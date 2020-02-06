@@ -56,19 +56,19 @@ public class ProdutoController {
 		}
 	}
 	
-	@DeleteMapping("/produto/{id}")
-	public ResponseEntity<String> delete(@Valid @PathVariable int id){
-		if(this.service.getById(id) == null) {
-			return ResponseEntity.notFound().build();
-		}
-		
-		try {
-			this.service.delete(id);
-			return ResponseEntity.ok("Produto removido com sucesso!");
-		} catch (Exception err) {
-			return ResponseEntity.badRequest().body(err.getMessage());
-		}
-	}
+//	@DeleteMapping("/produto/{id}")
+//	public ResponseEntity<String> delete(@Valid @PathVariable int id){
+//		if(this.service.getById(id) == null) {
+//			return ResponseEntity.notFound().build();
+//		}
+//		
+//		try {
+//			this.service.delete(id);
+//			return ResponseEntity.ok("Produto removido com sucesso!");
+//		} catch (Exception err) {
+//			return ResponseEntity.badRequest().body(err.getMessage());
+//		}
+//	}
 	
 	@GetMapping("/produto/{id}")
 	public ResponseEntity<Produto> getById(@Valid @PathVariable int id){

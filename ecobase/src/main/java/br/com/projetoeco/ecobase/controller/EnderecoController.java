@@ -35,15 +35,15 @@ public class EnderecoController {
 		}
 	}
 	
-	@PostMapping("/enderecos")
-		public ResponseEntity <List<Endereco>> postAll(@Valid @RequestBody List<Endereco> enderecos){
-		try {
-		List<Endereco> enderecoSalvo = this.service.insertOrUpdateAll(enderecos);
-			return ResponseEntity.ok(enderecoSalvo);
-		} catch (Exception e) {
-			return ResponseEntity.badRequest().body(null);
-		}
-	}
+//	@PostMapping("/enderecos")
+//		public ResponseEntity <List<Endereco>> postAll(@Valid @RequestBody List<Endereco> enderecos){
+//		try {
+//		List<Endereco> enderecoSalvo = this.service.insertOrUpdateAll(enderecos);
+//			return ResponseEntity.ok(enderecoSalvo);
+//		} catch (Exception e) {
+//			return ResponseEntity.badRequest().body(null);
+//		}
+//	}
 		
 	
 	@PutMapping("/endereco")
@@ -85,9 +85,9 @@ public class EnderecoController {
 		return ResponseEntity.ok(this.service.getAll());
 	}
 	
-	@GetMapping("/endereco/rua/{rua}")
-	public ResponseEntity<List<Endereco>> getAllByRua(@Valid @PathVariable String rua){
-		return ResponseEntity.ok(this.service.getAllByRua(rua));
-	}
+//	@GetMapping("/endereco/rua/{rua}")
+//	public ResponseEntity<List<Endereco>> getAllByRua(@Valid @PathVariable String rua){
+//		return ResponseEntity.ok(this.service.getAllByRua(rua));
+//	}
 	
 }

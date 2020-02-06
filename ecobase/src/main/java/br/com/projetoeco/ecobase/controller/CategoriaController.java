@@ -35,15 +35,15 @@ public class CategoriaController {
 		}
 	}
 	
-	@PostMapping("/categorias")
-		public ResponseEntity <List<Categoria>> postAll(@Valid @RequestBody List<Categoria> categorias){
-		try {
-		List<Categoria> categoriaSalvo = this.service.insertOrUpdateAll(categorias);
-			return ResponseEntity.ok(categoriaSalvo);
-		} catch (Exception e) {
-			return ResponseEntity.badRequest().body(null);
-		}
-	}
+//	@PostMapping("/categorias")
+//		public ResponseEntity <List<Categoria>> postAll(@Valid @RequestBody List<Categoria> categorias){
+//		try {
+//		List<Categoria> categoriaSalvo = this.service.insertOrUpdateAll(categorias);
+//			return ResponseEntity.ok(categoriaSalvo);
+//		} catch (Exception e) {
+//			return ResponseEntity.badRequest().body(null);
+//		}
+//	}
 		
 	
 	@PutMapping("/categoria")
