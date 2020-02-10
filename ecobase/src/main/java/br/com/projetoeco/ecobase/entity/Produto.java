@@ -30,6 +30,10 @@ public class Produto {
 	@NotEmpty(message = "O campo deve ser preenchido")
 	private String nome;
 	
+	@Column(length = 100)
+	@NotEmpty(message = "O campo deve ser preenchido")
+	private String linkFoto;
+	
 	@Column(length = 400)
 	@Size(max = 400, message = "Numero de caracteres não permitido")
 	@NotEmpty(message = "O campo deve ser preenchido")
