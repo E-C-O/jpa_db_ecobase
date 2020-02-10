@@ -19,4 +19,6 @@ public interface ProdutoService {
 	List<Produto> getAllByNome(String nome);
 	
 	Produto getByNome(String nome);
+	
+	List<Produto> getAllContain(String nome);
 }

@@ -51,4 +51,12 @@ public class ProdutoServiceImpl implements ProdutoService {
 	public List<Produto> insertOrUpdateAll(List<Produto> entities) {
 		return (List<Produto>) this.repository.saveAll(entities);
 	}
+
+	@Override
+	public List<Produto> getAllContain(String nome) {
+		
+		return this.repository.findByNomeContaining(nome);
+	}
+
+
 }

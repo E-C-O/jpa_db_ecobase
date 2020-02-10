@@ -30,8 +30,8 @@ public class Produto {
 	@NotEmpty(message = "O campo deve ser preenchido")
 	private String nome;
 	
-	@Column(length = 100)
-	@NotEmpty(message = "O campo deve ser preenchido")
+	@Column(length = 999999999)
+//	@NotEmpty(message = "O campo deve ser preenchido")
 	private String linkFoto;
 	
 	@Column(length = 400)
@@ -39,6 +39,14 @@ public class Produto {
 	@NotEmpty(message = "O campo deve ser preenchido")
 	private String descricao;
 	
+	public String getLinkFoto() {
+		return linkFoto;
+	}
+
+	public void setLinkFoto(String linkFoto) {
+		this.linkFoto = linkFoto;
+	}
+
 	@Column(length = 100)
 	private int qtdEstoque;
 	

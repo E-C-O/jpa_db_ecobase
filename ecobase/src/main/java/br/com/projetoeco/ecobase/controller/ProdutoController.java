@@ -90,4 +90,9 @@ public class ProdutoController {
 		return ResponseEntity.ok(this.service.getAllByNome(nome));
 	}
 	
+	@GetMapping("/produto/byNome/{nome}")
+	public ResponseEntity<List<Produto>> getAllContain(@Valid @PathVariable String nome){
+		return ResponseEntity.ok(this.service.getAllContain(nome));
+	}
+	
 }
